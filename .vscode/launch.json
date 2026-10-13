@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "StargateAPI",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/technical-exercise-main/tech_exercise_v.0.0.4/tech_exercise/package/exercise1/api/bin/Debug/net8.0/StargateAPI.dll",
+            "cwd": "${workspaceFolder}/technical-exercise-main/tech_exercise_v.0.0.4/tech_exercise/package/exercise1/api",
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ASPNETCORE_URLS": "http://localhost:5204"
+            },
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+                "uriFormat": "%s/swagger"
+            }
+        }
+    ]
+}
