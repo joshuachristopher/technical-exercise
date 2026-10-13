@@ -20,8 +20,9 @@ obj/
 *.sln.docstates
 
 # In memory database files
-*-shm
-*-wal
+technical-exercise-main/tech_exercise_v.0.0.4/tech_exercise/package/exercise1/api/: memory:-shm
+technical-exercise-main/tech_exercise_v.0.0.4/tech_exercise/package/exercise1/api/: memory:
+technical-exercise-main/tech_exercise_v.0.0.4/tech_exercise/package/exercise1/api/: memory:-wal
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
