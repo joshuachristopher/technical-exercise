@@ -1,4 +1,4 @@
-﻿namespace StargateAPI.Business.Dtos
+﻿namespace StargateAPI.Shared.Dtos
 {
     public class PersonAstronaut
     {
