@@ -8,9 +8,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 var connectionString = builder.Configuration.GetConnectionString("StarbaseApiDatabase");
 if (builder.Environment.IsDevelopment() && connectionString!.Contains(":memory:"))
 {
@@ -38,7 +40,9 @@ if (app.Environment.IsDevelopment())
 {
     using (var scope = app.Services.CreateScope())
     {
-        scope.ServiceProvider.GetRequiredService<StargateContext>().Database.Migrate();
+        var db = scope.ServiceProvider.GetRequiredService<StargateContext>();
+        db.Database.Migrate();
+        StargateSeeder.Seed(db);
     }
     app.UseSwagger();
     app.UseSwaggerUI();

@@ -19,9 +19,9 @@ namespace StargateAPI.Business.Data
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(StargateContext).Assembly);
 
-            base.OnModelCreating(modelBuilder);
+            //SeedData(modelBuilder);
 
-            SeedData(modelBuilder);
+            base.OnModelCreating(modelBuilder);
         }
 
         private static void SeedData(ModelBuilder modelBuilder)
