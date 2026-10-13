@@ -1,4 +1,4 @@
-namespace StargateAPI.Business.Data
+namespace StargateAPI.Data
 {
     public static class StargateSeeder
     {
