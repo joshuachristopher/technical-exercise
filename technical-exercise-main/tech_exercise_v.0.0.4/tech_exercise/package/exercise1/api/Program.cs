@@ -1,7 +1,7 @@
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using StargateAPI.Business.Commands;
-using StargateAPI.Business.Data;
+using StargateAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
