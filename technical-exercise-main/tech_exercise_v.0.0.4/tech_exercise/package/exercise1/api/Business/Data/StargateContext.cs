@@ -19,7 +19,7 @@ namespace StargateAPI.Business.Data
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(StargateContext).Assembly);
 
-            //SeedData(modelBuilder);
+            SeedData(modelBuilder);
 
             base.OnModelCreating(modelBuilder);
         }
@@ -32,12 +32,17 @@ namespace StargateAPI.Business.Data
                     new Person
                     {
                         Id = 1,
-                        Name = "John Doe"
+                        Name = "Alan Shepard"
                     },
                     new Person
                     {
                         Id = 2,
-                        Name = "Jane Doe"
+                        Name = "Franklin Chang-Díaz"
+                    },
+                    new Person
+                    {
+                        Id = 3,
+                        Name = "Sally Ride"
                     }
                 );
 
@@ -47,7 +52,7 @@ namespace StargateAPI.Business.Data
                     {
                         Id = 1,
                         PersonId = 1,
-                        CurrentRank = "1LT",
+                        CurrentRank = "Rear Admiral",
                         CurrentDutyTitle = "Commander",
                         CareerStartDate = DateTime.Now
                     }
@@ -61,7 +66,7 @@ namespace StargateAPI.Business.Data
                         PersonId = 1,
                         DutyStartDate = DateTime.Now,
                         DutyTitle = "Commander",
-                        Rank = "1LT"
+                        Rank = "Rear Admiral"
                     }
                 );
         }
