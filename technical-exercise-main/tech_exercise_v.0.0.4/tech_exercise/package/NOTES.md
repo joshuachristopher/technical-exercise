@@ -6,6 +6,7 @@ Considering the handlers inherit results from StargateAPI.Controllers.BaseRespon
 # The Plan
 * Add unit test project
     * Add unit tests on most impactful methods
+    * Code test coverage
 * Fix project structure
 * Generate the database
 * Enforce the rules
