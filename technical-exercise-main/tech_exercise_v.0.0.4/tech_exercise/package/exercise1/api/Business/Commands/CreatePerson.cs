@@ -3,6 +3,7 @@ using MediatR.Pipeline;
 using Microsoft.EntityFrameworkCore;
 using StargateAPI.Data;
 using StargateAPI.Controllers;
+using StargateAPI.Business.Interfaces;
 
 namespace StargateAPI.Business.Commands
 {
@@ -31,17 +32,22 @@ namespace StargateAPI.Business.Commands
     public class CreatePersonHandler : IRequestHandler<CreatePerson, CreatePersonResult>
     {
         private readonly StargateContext _context;
+        private readonly IPersonService _personService;
 
-        public CreatePersonHandler(StargateContext context)
+        public CreatePersonHandler(StargateContext context, IPersonService personService)
         {
             _context = context;
+            _personService = personService;
         }
         public async Task<CreatePersonResult> Handle(CreatePerson request, CancellationToken cancellationToken)
         {
+            var personExits = await _personService.IsPersonUnique(request.Name);
 
+            if (personExits)
+            {
                 var newPerson = new Person()
                 {
-                   Name = request.Name
+                    Name = request.Name
                 };
 
                 await _context.People.AddAsync(newPerson);
@@ -52,7 +58,11 @@ namespace StargateAPI.Business.Commands
                 {
                     Id = newPerson.Id
                 };
-          
+            }
+            else
+            {
+                throw new BadHttpRequestException("Person already exists");
+            }
         }
     }
 
