@@ -1,0 +1,21 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.brand {
+  font-family: "Exo 2", "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+a.mat-mdc-button,
+a.mat-button {
+  letter-spacing: 0.06em;
+}
+
+a.active {
+  color: var(--eh-amber, #ffc107);
+  border-bottom: 2px solid var(--eh-amber, #ffc107);
+  border-radius: 0;
+}
