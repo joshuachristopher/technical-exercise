@@ -1,0 +1,20 @@
+// Custom Theming for Angular Material — Event Horizon
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+// Cyan primary (gate energy), amber accent (chevron glow)
+$frontend-primary: mat.define-palette(mat.$cyan-palette, 500, 300, 700);
+$frontend-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
+$frontend-warn: mat.define-palette(mat.$red-palette);
+
+$frontend-theme: mat.define-dark-theme((
+  color: (
+    primary: $frontend-primary,
+    accent: $frontend-accent,
+    warn: $frontend-warn,
+  )
+));
+
+@include mat.all-component-themes($frontend-theme);

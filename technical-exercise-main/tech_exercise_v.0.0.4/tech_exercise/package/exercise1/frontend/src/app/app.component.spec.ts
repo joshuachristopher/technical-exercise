@@ -1,9 +1,14 @@
 import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 import { AppComponent } from './app.component';
+import { TopMenuComponent } from './shared/top-menu/top-menu.component';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    declarations: [AppComponent]
+    imports: [RouterTestingModule, MatToolbarModule, MatButtonModule],
+    declarations: [AppComponent, TopMenuComponent]
   }));
 
   it('should create the app', () => {
@@ -18,10 +23,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('frontend');
   });
 
-  it('should render title', () => {
+  it('should render Stargate brand title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('frontend app is running!');
+    expect(compiled.querySelector('.brand-title')?.textContent).toContain('Stargate');
   });
 });

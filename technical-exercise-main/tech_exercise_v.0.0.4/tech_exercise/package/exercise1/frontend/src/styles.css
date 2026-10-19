@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+/* Event Horizon — global space atmosphere */
+
+:root {
+  --eh-navy-deep: #050a14;
+  --eh-navy: #0a1628;
+  --eh-navy-mid: #0f2744;
+  --eh-cyan: #00bcd4;
+  --eh-cyan-soft: #4dd0e1;
+  --eh-amber: #ffc107;
+  --eh-text: #e8eef6;
+  --eh-text-muted: #9bb0c7;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--eh-text);
+  font-family: "IBM Plex Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--eh-navy-deep);
+  background-image:
+    radial-gradient(ellipse 120% 80% at 50% -20%, rgba(0, 188, 212, 0.14), transparent 55%),
+    radial-gradient(ellipse 80% 50% at 100% 100%, rgba(15, 39, 68, 0.9), transparent 50%),
+    linear-gradient(165deg, var(--eh-navy-deep) 0%, var(--eh-navy) 45%, var(--eh-navy-mid) 100%);
+  background-attachment: fixed;
+  min-height: 100%;
+}
+
+h1, h2, h3,
+.brand-title {
+  font-family: "Exo 2", "IBM Plex Sans", sans-serif;
+  letter-spacing: 0.04em;
+}
