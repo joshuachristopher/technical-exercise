@@ -2,14 +2,15 @@
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
 
-@include mat.core();
+@include mat.elevation-classes();
+@include mat.app-background();
 
 // Cyan primary (gate energy), amber accent (chevron glow)
-$frontend-primary: mat.define-palette(mat.$cyan-palette, 500, 300, 700);
-$frontend-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
-$frontend-warn: mat.define-palette(mat.$red-palette);
+$frontend-primary: mat.m2-define-palette(mat.$m2-cyan-palette, 500, 300, 700);
+$frontend-accent: mat.m2-define-palette(mat.$m2-amber-palette, A200, A100, A400);
+$frontend-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
-$frontend-theme: mat.define-dark-theme((
+$frontend-theme: mat.m2-define-dark-theme((
   color: (
     primary: $frontend-primary,
     accent: $frontend-accent,

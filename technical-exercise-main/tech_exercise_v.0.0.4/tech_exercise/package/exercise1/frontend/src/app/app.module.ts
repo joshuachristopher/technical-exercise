@@ -6,7 +6,6 @@ import { routes } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { TopMenuComponent } from './shared/top-menu/top-menu.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { AstronautComponent } from './pages/astronaut/astronaut.component';
@@ -19,7 +18,6 @@ import { AstronautComponent } from './pages/astronaut/astronaut.component';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule
   ],
